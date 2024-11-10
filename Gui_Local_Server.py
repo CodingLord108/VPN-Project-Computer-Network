@@ -3,6 +3,13 @@ import threading
 import tkinter as tk
 from tkinter import scrolledtext
 from cryptography.fernet import Fernet
+import logging
+
+logging.basicConfig(
+    filename="local_server.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 LOCAL_SERVER_PORT = 9090
 
@@ -30,6 +37,7 @@ class LocalServerApp:
         self.text_area = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=50, height=20)
         self.text_area.grid(column=0, row=0, padx=10, pady=10)
         self.text_area.insert(tk.END, "Local Server listening on port 9090...\n")
+        logging.info("Local Server started on port 9090")
 
         self.entry = tk.Entry(root, width=40)
         self.entry.grid(column=0, row=1, padx=10, pady=5)
@@ -45,6 +53,7 @@ class LocalServerApp:
         while True:
             self.client_socket, addr = self.server_socket.accept()
             self.text_area.insert(tk.END, f"Connection established with {addr}\n")
+            logging.info(f"Connection established with {addr}")
             threading.Thread(target=self.receive_messages, daemon=True).start()
 
     def receive_messages(self):
@@ -55,16 +64,20 @@ class LocalServerApp:
                     decrypted_data = cipher_suite.decrypt(encrypted_data)
                     message = caesar_decrypt(decrypted_data.decode())
                     self.text_area.insert(tk.END, f"VPN Server: {message}\n")
+                    logging.info(f"Received message from VPN Server: {message}")
                     if message.lower() == "bye":
                         self.text_area.insert(tk.END, "Ending conversation.\n")
+                        logging.info("Ending conversation with VPN Server")
                         break
             except Exception as e:
-                self.text_area.insert(tk.END, f"Error: {e}\n")
+                logging.error(f"Error receiving message: {e}")
                 break
 
     def send_response(self, event=None):
         response = self.entry.get()
         self.text_area.insert(tk.END, f"Local Server: {response}\n")
+        logging.info(f"Sending response to VPN Server: {response}")
+        
         caesar_encrypted = caesar_encrypt(response)
         final_encrypted = cipher_suite.encrypt(caesar_encrypted.encode())
         self.client_socket.send(final_encrypted)
