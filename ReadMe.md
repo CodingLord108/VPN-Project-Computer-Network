@@ -41,8 +41,10 @@ This project demonstrates a simple VPN-like setup with communication between a *
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/vpn-double-encryption.git
-   cd vpn-double-encryption
+   git clone https://github.com/CodingLord108/VPN-Project-Computer-Network.git
+   cd VPN-Project-Computer-Network
+Public
+
    ```
 
 2. Ensure you have all dependencies installed, specifically `cryptography`.
