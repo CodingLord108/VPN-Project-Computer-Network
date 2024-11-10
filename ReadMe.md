@@ -1,6 +1,3 @@
-Here is the full, updated `README.md` including all the details, steps, and descriptions I mentioned previously:
-
-```markdown
 # VPN Communication System with Double Encryption
 
 This project demonstrates a simple VPN-like setup with communication between a **VPN Client**, a **VPN Server**, and a **Local Server**, featuring a **Caesar Cipher** and **Fernet** encryption for double-layered security. Each message sent through this system is encrypted first with Caesar Cipher and then with Fernet for enhanced security. The project uses SSL to secure communication between the VPN Client and VPN Server.
