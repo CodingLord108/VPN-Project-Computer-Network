@@ -186,11 +186,3 @@ Feel free to fork the repository, open issues, and submit pull requests for impr
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-
-### How to Use:
-
-1. **Copy and Paste**: Copy this entire content into a file named `README.md` in your GitHub project directory.
-2. **Customization**: Make sure to replace placeholder URLs, such as `https://github.com/yourusername/vpn-double-encryption.git`, with the actual URL for your repository.
-3. **Commit to GitHub**: After adding this README to your project folder, push it to your GitHub repository.
-
-This README includes step-by-step instructions, usage examples, encryption details, and all information needed for a user to set up and run your VPN with double encryption.
