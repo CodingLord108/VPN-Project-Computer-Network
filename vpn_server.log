@@ -1,0 +1,13 @@
+2024-11-10 21:33:33,048 - INFO - VPN Server started on port 8080
+2024-11-10 21:33:53,242 - INFO - SSL connection established with ('127.0.0.1', 58914)
+2024-11-10 21:37:26,708 - INFO - Forwarded response from Local Server to Client
+2024-11-10 21:37:35,250 - INFO - Received message from Client: Hi, could you help me set up the VPN? I�m trying to access our internal network remotely but keep running into issues with the setup.
+2024-11-10 21:37:50,689 - INFO - Forwarded response from Local Server to Client
+2024-11-10 21:38:08,883 - INFO - Received message from Client: I�m using the client, yes. When I try to connect, it says 'Authentication Failed.' I double-checked my credentials, so I�m not sure why it�s failing.
+2024-11-10 21:39:14,904 - INFO - Forwarded response from Local Server to Client
+2024-11-10 21:39:42,835 - INFO - Received message from Client: Okay, I reset my password and updated it in the VPN client. Now it�s connecting, but it�s very slow. Is that normal?
+2024-11-10 21:40:46,601 - INFO - Forwarded response from Local Server to Client
+2024-11-10 21:41:07,438 - INFO - Received message from Client: I tried moving closer to the router, but it�s still sluggish. Should I adjust any settings in the client, like the protocol?
+2024-11-10 21:41:19,760 - INFO - Forwarded response from Local Server to Client
+2024-11-10 21:41:37,500 - INFO - Received message from Client: I switched to UDP, and it�s definitely faster! Thanks for all the help. I�ll reach out if I run into any other issues.
+
