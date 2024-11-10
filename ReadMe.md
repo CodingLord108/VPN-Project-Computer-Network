@@ -43,8 +43,6 @@ This project demonstrates a simple VPN-like setup with communication between a *
    ```bash
    git clone https://github.com/CodingLord108/VPN-Project-Computer-Network.git
    cd VPN-Project-Computer-Network
-Public
-
    ```
 
 2. Ensure you have all dependencies installed, specifically `cryptography`.
