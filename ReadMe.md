@@ -22,7 +22,6 @@ This project demonstrates a simple VPN-like setup with communication between a *
 - [Usage](#usage)
 - [File Overview](#file-overview)
 - [Encryption Flow](#encryption-flow)
-- [Notes](#notes)
 
 ---
 
@@ -82,13 +81,6 @@ Copy the generated Fernet key and replace the `FERNET_KEY` placeholder in each o
 - `vpn_server.py`
 - `vpn_client.py`
 
-In each of these files, update the code like this:
-
-```python
-FERNET_KEY = b'your-generated-fernet-key-here'
-cipher_suite = Fernet(FERNET_KEY)
-```
-
 Ensure that the same Fernet key is used in all components to maintain the encryption consistency.
 
 ---
@@ -99,17 +91,17 @@ Run each component in a separate terminal window or tab, in the following order:
 
 1. **Local Server**:
    ```bash
-   python local_server.py
+   python Gui_Local_Server.py
    ```
 
 2. **VPN Server**:
    ```bash
-   python vpn_server.py
+   python Gui_VPN_Server.py
    ```
 
 3. **VPN Client**:
    ```bash
-   python vpn_client.py
+   python Gui_VPN_Client.py
    ```
 
 Each component will open a graphical interface using Tkinter, allowing you to send and receive messages.
@@ -134,9 +126,9 @@ Each component will open a graphical interface using Tkinter, allowing you to se
 
 ## File Overview
 
-- **local_server.py**: Simulates a local server that listens for messages from the VPN Server, decrypts them, processes them, and sends a response.
-- **vpn_server.py**: Acts as an intermediary server (VPN Server) that handles encrypted communication between the VPN Client and Local Server. Uses SSL and double encryption.
-- **vpn_client.py**: The client interface that sends encrypted messages to the VPN Server and receives responses.
+- **Gui_Local_Server.py**: Simulates a local server that listens for messages from the VPN Server, decrypts them, processes them, and sends a response.
+- **Gui_VPN_Server.py**: Acts as an intermediary server (VPN Server) that handles encrypted communication between the VPN Client and Local Server. Uses SSL and double encryption.
+- **Gui_VPN_Client.py**: The client interface that sends encrypted messages to the VPN Server and receives responses.
 
 ---
 
@@ -150,39 +142,3 @@ Each component will open a graphical interface using Tkinter, allowing you to se
 
 ---
 
-## Notes
-
-This project is for educational purposes to illustrate a basic encryption process in a simulated VPN environment. The encryption process uses two layers: Caesar Cipher for basic shifting encryption and Fernet for symmetric encryption with a secure key. For production environments, use robust cryptographic libraries and protocols, and avoid creating custom encryption schemes.
-
----
-
-## Example Encryption (For Demo Purposes)
-
-### Caesar Cipher Example:
-In Caesar Cipher, each letter in the plaintext is shifted by a certain number of places. For example:
-- **Original message**: `Hello`
-- **Shift 3**: `Khoor`
-
-This is just the first layer of encryption before applying the second layer with Fernet.
-
-### Fernet Encryption:
-Fernet encryption uses a symmetric key to encrypt and decrypt messages securely. The message is encrypted with a generated Fernet key and can only be decrypted with the same key.
-
-For example:
-- **Original message**: `Hello`
-- **Encrypted with Fernet**: `gAAAAABlY...`
-
-When the message reaches the destination server (VPN Server), it will be decrypted using the shared Fernet key and the Caesar Cipher will be reversed to retrieve the original message.
-
----
-
-## Contribution
-
-Feel free to fork the repository, open issues, and submit pull requests for improvements. Any contributions are welcome!
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
